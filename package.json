@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+<<<<<<< HEAD
+    "react": "^16.2.0"
+=======
+    "dotenv": "^4.0.0",
+    "mongodb": "^3.0.0-rc0"
+>>>>>>> feature/foo
+  }
+}
