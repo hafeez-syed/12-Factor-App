@@ -8,7 +8,7 @@ const proxyBaseImageUrl = baseImageUrl
       proxyReqPathResolver: function (req) {
         const newPath = baseImageUrl + req.path;
         console.log(`Proxying requests from ${req.path} to ${newPath}`);
-        return newPath;
+        return baseImageUrl;//newPath;
       }
     })
   : express.static(path.join(__dirname, 'public/images'));
@@ -19,7 +19,8 @@ app.use(morgan('combined'));
 app.use('/images', proxyBaseImageUrl);
 
 app.get('/', function (req, res) {
-  res.send('<h1>Hello from Herman</h1><img src="/images/herman.jpg" />')
+  var imgPath = baseImageUrl ? '/images' : '/images/herman.jpg';
+  res.send('<h1>Hello from Herman</h1><img src="' + imgPath + '" />');
 })
 
 app.listen(8888, () => console.log('Web server running on port 8888'));
