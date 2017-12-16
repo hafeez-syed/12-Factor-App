@@ -26,6 +26,7 @@ app.listen(8880);
 
 
 
+/*
 require('dotenv').config();
 
 var MongoClient = require('mongodb').MongoClient;
@@ -37,3 +38,4 @@ MongoClient.connect(process.env.MONGO_URI, function(err, db) {
     console.log('Connected to MongoDB!');
   }
 });
+*/
