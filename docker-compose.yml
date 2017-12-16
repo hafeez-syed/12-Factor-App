@@ -5,4 +5,4 @@ services:
     env_file:
       - .env
     ports:
-      - 8880:8880
+      - 8888:8888
