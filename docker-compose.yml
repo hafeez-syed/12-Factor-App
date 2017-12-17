@@ -1,8 +1,13 @@
 version: '3'
 services:
   app:
+    build: .
     image: foo/bar:1.0
+    volumes:
+      - appData:/srv/uploads
     env_file:
       - .env
     ports:
-      - 8888:8888
+      - 8880:8888
+volumes:
+  appData:
